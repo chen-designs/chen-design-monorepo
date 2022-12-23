@@ -1,0 +1,93 @@
+@import './token.less';
+
+.@{prefix}-dropdown,
+.@{prefix}-drop-submenu-popup {
+	min-width: @size-10;
+	max-width: 200px;
+	height: 100%;
+	white-space: nowrap;
+	user-select: none;
+	overflow: hidden;
+	cursor: pointer;
+
+	.@{prefix}-render-inner {
+		max-width: 200px;
+		padding: @spacing-1 @spacing-2;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+
+		* {
+			pointer-events: none;
+		}
+
+		&-icon {
+			border-radius: @border-radius-small;
+			width: 22px;
+			flex-shrink: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&+* {
+				margin-right: @spacing-2;
+			}
+
+			&:empty::before {
+				border-radius: @border-radius-small;
+				display: block;
+				content: '';
+				width: 12px;
+				height: 12px;
+				background-color: @dropdowm-icon-empty-background;
+			}
+		}
+
+		&-content {
+			.ellipsis;
+			flex: 1;
+		}
+
+		&-extra {
+			margin-left: @spacing-4;
+		}
+	}
+
+	.@{prefix}-drop-divider {
+		height: 1px;
+		margin: 1px @spacing-2;
+		background-color: @dropdowm-divider-background;
+		pointer-events: none;
+	}
+
+	.@{prefix}-drop-group {
+		&-title {
+			.ellipsis;
+			padding: @spacing-1 @spacing-2;
+		}
+	}
+
+	.@{prefix}-drop-option:not(.@{prefix}-drop-option-disabled):hover,
+	.@{prefix}-drop-submenu:not(.@{prefix}-drop-submenu-disabled) .@{prefix}-drop-submenu-title:hover {
+		color: @dropdowm-color-hover;
+	}
+
+	.@{prefix}-drop-option-selected {
+		color: @dropdowm-color-selected;
+		font-weight: @font-weight-500;
+	}
+
+	// .@{prefix}-drop-group-disabled,
+	.@{prefix}-drop-submenu-disabled .@{prefix}-drop-submenu-title,
+	.@{prefix}-drop-option-disabled {
+		color: @dropdowm-color-disabled;
+		cursor: default;
+		// pointer-events: none;
+	}
+
+	&.show-icons {
+		.@{prefix}-drop-group-title {
+			padding: @spacing-1 @spacing-4;
+		}
+	}
+}

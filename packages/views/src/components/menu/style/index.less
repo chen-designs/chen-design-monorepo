@@ -1,0 +1,95 @@
+@import './token.less';
+
+.@{prefix}-menu,
+&-submenu-popup {
+	color: @menu-color-item;
+}
+
+.@{prefix}-menu {
+	width: 100%;
+	white-space: nowrap;
+	user-select: none;
+
+	&-overflow {
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		position: relative;
+
+		&-hidden {
+			position: absolute !important;
+			visibility: hidden;
+			pointer-events: none;
+			opacity: 0;
+		}
+	}
+
+	&-collapsed &-inner {
+		justify-content: center;
+	}
+
+	&-inner {
+		// border: 1px solid red;
+		display: flex;
+		align-items: center;
+		padding: 4px 8px;
+		min-height: 30px;
+		cursor: pointer;
+		overflow: hidden;
+
+		// color: @menu-color-item;
+
+		&-content {
+			.ellipsis;
+			flex: 1;
+		}
+
+		&-extra {
+			margin-left: 8px;
+		}
+	}
+
+	&-group {
+		&-title {
+			.ellipsis;
+			padding: 4px 8px;
+			// border: 1px solid red;
+		}
+	}
+
+	&-submenu-popup {
+		max-width: 200px;
+		min-width: 100px;
+	}
+
+	& .@{prefix}-icon,
+	&-submenu-popup .@{prefix}-icon {
+		padding: 0;
+		height: 1em;
+
+		svg {
+			font-size: 1.4em;
+		}
+	}
+
+
+	// #region 菜单 Hover 样式
+
+	&-item:hover,
+	&-submenu-title:hover {
+		color: @menu-color-item-hover;
+	}
+
+	// #endregion
+
+	// #region 菜单选中样式
+
+	&-item-selected,
+	&-submenu-selected &-submenu-title {
+		color: @menu-color-item-selected;
+		font-weight: @menu-font-weight-selected;
+	}
+
+	// #endregion
+
+}

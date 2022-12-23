@@ -1,0 +1,27 @@
+[
+	{ "icon": "icon-general-outline-apps", "label": "菜单一" },
+	{ "icon": "icon-general-outline-apps", "divider": true },
+	{ "icon": "icon-general-outline-apps", "label": "菜单二" },
+	{ "icon": "icon-general-outline-apps", "label": "菜单三" },
+	{
+		"icon": "icon-general-outline-apps",
+		"label": "子菜单一",
+		"disabled": true,
+		"children": [
+			{ "icon": "icon-general-outline-apps", "label": "菜单一" },
+			{ "icon": "icon-general-outline-apps", "divider": true },
+			{ "icon": "icon-general-outline-apps", "label": "菜单二" },
+			{ "icon": "icon-general-outline-apps", "label": "菜单三" }
+		]
+	},
+	{
+		"icon": "icon-general-outline-apps",
+		"label": "子菜单二",
+		"children": [
+			{ "icon": "icon-general-outline-apps", "label": "菜单一" },
+			{ "icon": "icon-general-outline-apps", "divider": true },
+			{ "icon": "icon-general-outline-apps", "label": "菜单二" },
+			{ "icon": "icon-general-outline-apps", "label": "菜单三" }
+		]
+	}
+]

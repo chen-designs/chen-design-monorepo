@@ -1,0 +1,31 @@
+.size(@width; @height) {
+	width: @width;
+	height: @height;
+}
+
+.size-ratio(@size, @ratio: (9 / 16)) {
+	.size(@size, @size * @ratio)
+	// .size(@size, @ratio)
+}
+
+.square(@size) {
+	.size(@size; @size);
+}
+
+.full-parent() {
+	.square(100%);
+}
+
+
+
+.font-under-size(@size, @rotate: 0deg) {
+	display: inline-block;
+	@font-scale: unit(@size / @font-size-base);
+	font-size: @font-size-base;
+	font-size:~'@{size} \9'; // ie8-9
+	transform: scale(@font-scale) rotate(@rotate);
+
+	:root & {
+		font-size: @font-size-base; // reset ie9 and above
+	}
+}

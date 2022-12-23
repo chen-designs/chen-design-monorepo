@@ -1,0 +1,19 @@
+@import '../themes/index.less';
+
+.fade-in-appear-from,
+.fade-in-enter-from,
+.fade-in-leave-to {
+	opacity: 0 !important;
+}
+
+.fade-in-appear-to,
+.fade-in-enter-to,
+.fade-in-leave-from {
+	opacity: 1 !important;
+}
+
+.fade-in-appear-active,
+.fade-in-enter-active,
+.fade-in-leave-active {
+	transition: opacity @transition-duration-2 @transition-timing-function-linear;
+}

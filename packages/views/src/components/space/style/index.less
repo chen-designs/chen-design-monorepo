@@ -1,0 +1,49 @@
+@import '../../../style/common/index.less';
+
+.@{prefix}-space {
+	display: inline-flex;
+	overflow: hidden;
+	vertical-align: middle;
+
+	&-item {
+		display: flex;
+		align-items: center;
+	}
+
+	&-split {
+		color: @color-text-3;
+		pointer-events: none;
+	}
+
+	&-vertical {
+		flex-direction: column;
+	}
+
+	&-wrap {
+		flex-wrap: wrap;
+	}
+
+	&-fill {
+		display: flex;
+	}
+
+	&-align-baseline {
+		align-items: baseline;
+	}
+
+	&-align-start {
+		align-items: flex-start;
+	}
+
+	&-align-end {
+		align-items: flex-end;
+	}
+
+	&-align-center {
+		align-items: center;
+	}
+
+	&.@{prefix}-space-vertical &-split {
+		width: 100%;
+	}
+}

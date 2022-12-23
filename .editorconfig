@@ -1,0 +1,21 @@
+# http://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+indent_style = tab
+tab_width = 4
+indent_size = 4
+# end_of_line = auto
+insert_final_newline = true
+ij_html_quote_style = double
+max_line_length = 180
+trim_trailing_whitespace = true
+
+[*.{html,less,json,config.ts,config.js,config.cjs,lintstagedrc}]
+tab_width = 2
+indent_size = 2
+
+[*.md]
+insert_final_newline = false
+trim_trailing_whitespace = false

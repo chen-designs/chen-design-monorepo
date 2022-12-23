@@ -1,0 +1,38 @@
+@import 'token.less';
+
+.@{prefix}-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	height: auto;
+	user-select: none;
+
+	* {
+		pointer-events: none;
+	}
+
+	svg {
+		border-radius: @border-radius-small;
+		width: 1em;
+		height: 1em;
+		padding: @spacing-1;
+		font-size: var(--font-size, 1.4em);
+		// background-color: red;
+		transform-origin: center center;
+		transition: transform @transition-duration-2 @transition-timing-function-standard;
+		// fill: none;
+		// stroke: currentColor;
+		// stroke-width: 6px;
+		stroke-linecap: round;
+	}
+
+	&-text {
+		margin-left: @spacing-1;
+	}
+
+	&-clickable:hover {
+		color: @icon-color-active;
+		cursor: pointer;
+	}
+}

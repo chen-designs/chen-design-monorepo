@@ -1,0 +1,74 @@
+{
+	"root": true,
+	"globals": { "node": true },
+	"env": { "browser": true, "node": true },
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:import/recommended",
+		"plugin:import/typescript",
+		"plugin:vue/vue3-recommended",
+		"plugin:prettier/recommended",
+		// "@vue/typescript/recommended"
+		"./.eslintrc-auto-import.json"
+	],
+	"parser": "vue-eslint-parser",
+	"parserOptions": {
+		// Parser that checks the content of the <script> tag
+		"sourceType": "module",
+		"ecmaVersion": "latest",
+		"ecmaFeatures": { "jsx": true },
+		"parser": "@typescript-eslint/parser"
+	},
+	"plugins": ["@typescript-eslint"],
+	"ignorePatterns": ["**/*.d.ts", "node_modules/**", "**/dist/**"],
+	"settings": { "import/resolver": { "typescript": { "project": "./tsconfig.json" } } },
+	"rules": {
+		"prettier/prettier": ["warn", { "printWidth": 180, "trailingComma": "none" }],
+
+		"vue/html-self-closing": 0,
+		"vue/require-default-prop": 0,
+		"vue/max-attributes-per-line": 0,
+		"vue/multi-word-component-names": 0,
+		"vue/no-reserved-component-names": "off",
+		"vue/singleline-html-element-content-newline": 0,
+		"vue/component-name-in-template-casing": ["error", "kebab-case"],
+		"vue/component-options-name-casing": ["error", "PascalCase"],
+		"vue/custom-event-name-casing": ["error", "kebab-case", { "ignores": [] }],
+
+		"@typescript-eslint/ban-ts-comment": 0,
+		"@typescript-eslint/no-var-requires": 0,
+		"@typescript-eslint/no-explicit-any": 0,
+		"@typescript-eslint/no-empty-function": 0,
+		"@typescript-eslint/no-unused-vars": "warn",
+		"@typescript-eslint/no-non-null-assertion": 0,
+		"@typescript-eslint/explicit-module-boundary-types": 0,
+		// Redefine the extension detection rules, overwrite airbnb-base
+		"import/no-named-as-default": 0,
+		"import/prefer-default-export": 0,
+		"import/no-extraneous-dependencies": 0,
+		"import/no-unresolved": "off",
+		"import/extensions": ["error", "ignorePackages", { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" }],
+		// You can use underscore variable names (private variables)
+		"no-shadow": 0,
+		"no-console": "off",
+		"no-bitwise": 0,
+		"no-debugger": "off",
+		"no-continue": 0,
+		"no-plusplus": 0,
+		"prefer-template": 1,
+		"no-multi-assign": 0,
+		"no-return-assign": 0,
+		"no-nested-ternary": 0,
+		"no-param-reassign": 0,
+		"no-use-before-define": 0,
+		"no-restricted-syntax": 0,
+		"no-underscore-dangle": 0,
+		"no-useless-return": "off",
+		"consistent-return": "off",
+		"no-restricted-exports": "off",
+		"no-promise-executor-return": "off",
+		"no-empty": [2, { "allowEmptyCatch": true }],
+		"no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }]
+	}
+}

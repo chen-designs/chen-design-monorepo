@@ -1,0 +1,31 @@
+[
+	{ "icon": "icon-general-outline-apps", "label": "菜单一", "name": "1", "extra": "new" },
+	{ "icon": "icon-general-outline-apps", "label": "菜单二", "name": "2", "extra": "new" },
+	{
+		"icon": "icon-general-outline-apps",
+		"label": "分组菜单",
+		"name": "0",
+		"group": true,
+		"children": [
+			{ "label": "菜单一", "name": "0-1" },
+			{ "icon": "icon-general-outline-apps", "label": "菜单二", "name": "0-2" }
+		]
+	},
+	{ "icon": "icon-general-outline-apps", "label": "菜单三", "name": "3", "extra": "new" },
+	{ "icon": "icon-general-outline-apps", "label": "菜单四", "name": "4", "extra": "new" },
+
+	{ "icon": "icon-general-outline-apps", "label": "菜单五", "name": "5", "extra": "new" },
+	{ "icon": "icon-general-outline-apps", "label": "菜单六", "name": "6", "extra": "new" },
+	{ "icon": "icon-general-outline-apps", "label": "菜单七", "name": "7", "extra": "new" },
+	{ "icon": "icon-general-outline-apps", "label": "菜单八", "name": "8", "extra": "new" },
+	{
+		"icon": "icon-general-outline-apps",
+		"label": "菜单九-菜单九菜单九菜单九菜单九菜单九菜单九菜单九菜单九菜单九菜单九菜单九菜单九菜单九菜单九菜单九菜单九菜单九菜单九",
+		"name": "9",
+		"children": [
+			{ "icon": "icon-general-outline-apps", "label": "菜单一", "name": "9-1" },
+			{ "label": "菜单二", "name": "9-2" },
+			{ "icon": "icon-general-outline-apps", "label": "菜单三", "name": "9-3" }
+		]
+	}
+]

@@ -1,0 +1,137 @@
+@import 'token.less';
+@import '../../../style/mixins/index.less';
+
+.@{prefix}-diagram {
+	.full-parent;
+	background-color: @diagram-background;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+
+	canvas {
+		.full-parent;
+		outline: none;
+
+		&+div {
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+	}
+
+	&-toolbar {
+		@height : @size-default + 1px;
+
+		border-bottom: 1px solid @diagram-border-color;
+		height: @height;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		white-space: nowrap;
+
+		&-left {
+			width: 300px;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			overflow: hidden;
+			margin-right: 5 * @spacing-small
+		}
+
+		&-right {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			padding: 0 @spacing-small;
+			overflow: hidden;
+		}
+	}
+
+	&-container {
+		.full-parent;
+		flex: 1;
+		overflow: hidden;
+		position: relative;
+
+		.@{prefix}-empty {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 8;
+		}
+	}
+
+	&-viewport {
+		.full-parent;
+	}
+
+	&-overview {
+		.size-ratio(250px);
+		background-color: @diagram-background;
+		overflow: hidden;
+		transition: all @transition-duration-2 @transition-timing-function-linear;
+		box-shadow: @shadow-special;
+		position: absolute;
+		right: 0px;
+		bottom: 0px;
+		z-index: 4;
+
+		&.collapsed {
+			.size(20px, 20px);
+			box-shadow: none;
+
+			.@{prefix}-diagram-overport {
+				opacity: 0;
+			}
+
+			.@{prefix}-diagram-trigger {
+				cursor: nw-resize;
+			}
+		}
+
+		.@{prefix}-diagram-overport {
+			.full-parent;
+			transition: opacity @transition-duration-2 @transition-timing-function-linear;
+		}
+
+		.@{prefix}-diagram-trigger {
+			display: block;
+			line-height: 1;
+			clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+			cursor: se-resize;
+			position: absolute;
+			right: 0px;
+			bottom: 0px;
+			z-index: 6;
+		}
+	}
+
+	&-coverlayers {
+		pointer-events: none;
+		padding: @spacing-small;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 12;
+
+		& * {
+			pointer-events: all;
+		}
+	}
+
+	&-footer {
+		border-top: 1px solid @diagram-border-color;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		padding: 2px @spacing-mini;
+	}
+}

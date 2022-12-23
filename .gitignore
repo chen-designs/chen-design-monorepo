@@ -1,0 +1,13 @@
+.idea/
+
+dist/
+node_modules/
+**/.DS_Store
+
+packages/views/**/README.md
+packages/*/es
+packages/*/lib
+plugins/*/es
+plugins/*/lib
+sites/*/es
+sites/*/lib

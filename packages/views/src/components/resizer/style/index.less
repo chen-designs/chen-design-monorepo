@@ -1,0 +1,67 @@
+@import 'token.less';
+
+.@{prefix}-resizer {
+	.full-parent;
+	position: relative;
+
+	&&-moving {
+		transition: none;
+	}
+
+	&-container {
+		.full-parent;
+		overflow: hidden;
+	}
+
+	&-handle {
+		opacity: 0.1;
+		transition: all @transition-duration-2 @transition-timing-function-standard
+	}
+
+	&:hover &-handle {
+		opacity: 1;
+	}
+
+	&-direction-left,
+	&-direction-right,
+	&-direction-top,
+	&-direction-bottom {
+		box-sizing: border-box;
+		user-select: none;
+		min-width: 2px;
+		min-height: 2px;
+		color: @resizer-handle-color;
+		background-color: @resizer-handle-background;
+		position: absolute;
+		overflow: hidden;
+		z-index: 11;
+	}
+
+	&-direction-top {
+		cursor: row-resize;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	&-direction-bottom {
+		cursor: row-resize;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	&-direction-left {
+		cursor: col-resize;
+		top: 0;
+		left: 0;
+		bottom: 0;
+	}
+
+	&-direction-right {
+		cursor: col-resize;
+		top: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
